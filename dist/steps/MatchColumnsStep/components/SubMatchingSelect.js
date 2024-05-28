@@ -8,8 +8,14 @@ const SubMatchingSelect = ({ option, column, onSubChange }) => {
     const styles = useStyleConfig("MatchColumnsStep");
     const { translations, fields } = useRsi();
     const options = getFieldOptions(fields, column.value);
-    console.log("FOOOOO");
-    console.log(option);
+    console.log("translations");
+    console.log(translations);
+    console.log("fields");
+    console.log(fields);
+    console.log("column");
+    console.log(column.value);
+    console.log("options");
+    console.log(options);
     const value = options.find((opt) => opt.value == option.value);
     return (jsxs(Box, { pl: 2, pb: "0.375rem", children: [jsx(Text, { sx: styles.selectColumn.selectLabel, children: option.entry }), jsx(MatchColumnSelect, { value: value, placeholder: translations.matchColumnsStep.subSelectPlaceholder, onChange: (value) => onSubChange(value?.value, column.index, option.entry), options: options, name: option.entry })] }));
 };
