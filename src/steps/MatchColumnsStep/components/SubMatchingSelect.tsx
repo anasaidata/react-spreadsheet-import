@@ -15,6 +15,8 @@ export const SubMatchingSelect = <T extends string>({ option, column, onSubChang
   const styles = useStyleConfig("MatchColumnsStep") as Styles
   const { translations, fields } = useRsi<T>()
   const options = getFieldOptions(fields, column.value)
+  console.log("FOOOOO")
+  console.log(option)
   const value = options.find((opt) => opt.value == option.value)
 
   return (
